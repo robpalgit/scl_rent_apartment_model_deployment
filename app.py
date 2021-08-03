@@ -24,12 +24,15 @@ def get_comunas():
 def predict_price():
     bedrooms = int(request.form['bedrooms'])
     bathrooms = int(request.form['bathrooms'])
-    total_area_m2 = float(request.form['total_area_m2'])
+    covered_area_m2 = float(request.form['covered_area_m2'])
     balcony_area_m2 = float(request.form['balcony_area_m2'])
     comuna = request.form['comuna']
+    neighborhood = request.form['neighborhood']
+
+    neighborhood = utils.neighborhood_dict[neighborhood]
 
     response = jsonify({
-        'predicted_price': utils.predict_property_price(bedrooms, bathrooms, total_area_m2, balcony_area_m2, comuna)
+        'predicted_price': utils.predict_property_price(bedrooms, bathrooms, covered_area_m2, balcony_area_m2, comuna, neighborhood)
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
