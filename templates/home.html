@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Santiago Chile Apartment Rent Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">const SERVICE_URL = "{{ SERVICE_URL }}"</script>
+    <script src="{{ url_for('static', filename='home.js')}}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+<div class="img"></div>
+<form class="form">
+
+	<h2>Bedrooms</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-bed-1" name="uiBedrooms" value="1" checked/>
+		<label for="radio-bed-1">1</label>
+		<input type="radio" id="radio-bed-2" name="uiBedrooms" value="2"/>
+		<label for="radio-bed-2">2</label>
+		<input type="radio" id="radio-bed-3" name="uiBedrooms" value="3"/>
+		<label for="radio-bed-3">3</label>
+		<input type="radio" id="radio-bed-4" name="uiBedrooms" value="4"/>
+		<label for="radio-bed-4">4</label>
+		<input type="radio" id="radio-bed-5" name="uiBedrooms" value="5"/>
+		<label for="radio-bed-5">5</label>
+	</div>
+	</form>
+
+<form class="form">
+	<h2>Bathrooms</h2>
+	<div class="switch-field">
+		<input type="radio" id="radio-bath-1" name="uiBathrooms" value="1" checked/>
+		<label for="radio-bath-1">1</label>
+		<input type="radio" id="radio-bath-2" name="uiBathrooms" value="2"/>
+		<label for="radio-bath-2">2</label>
+		<input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
+		<label for="radio-bath-3">3</label>
+		<input type="radio" id="radio-bath-4" name="uiBathrooms" value="4"/>
+		<label for="radio-bath-4">4</label>
+		<input type="radio" id="radio-bath-5" name="uiBathrooms" value="5"/>
+		<label for="radio-bath-5">5</label>
+	</div>
+
+	<h2>Total area (m2)</h2>
+    <input class="area"  type="text" id="uiTotalM2" class="floatLabel" name="TotalAreaM2" value="0">
+
+	<h2>Balcony area (m2)</h2>
+    <input class="area"  type="text" id="uiBalconyM2" class="floatLabel" name="BalconyAreaM2" value="0">
+
+	<h2>Comuna</h2>
+	<div>
+    <select class="comuna" name="" id="uiComunas">
+    <option value="" disabled="disabled" selected="selected">Select a Comuna</option>
+		<option>Estación Central</option>
+		<option>Huechuraba</option>
+		<option>Independencia</option>
+		<option>La Cisterna</option>
+		<option>La Florida</option>
+		<option>La Reina</option>
+		<option>Las Condes</option>
+		<option>Lo Barnechea</option>
+		<option>Macul</option>
+		<option>Providencia</option>
+		<option>Quinta Normal</option>
+		<option>Recoleta</option>
+		<option>San Joaquín</option>
+		<option>San Miguel</option>
+		<option>Santiago</option>
+		<option>Vitacura</option>
+		<option>Ñuñoa</option>
+    </select>
+    </div>
+
+	<button class="submit" onclick="onClickedPredictPrice()" type="button">Predict Price</button>
+	<div id="uiPredictedPrice" class="result">	<h2></h2> </div>
+</body>
+</html>
