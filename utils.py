@@ -202,7 +202,7 @@ def load_saved_artifacts():
     global __model
 
     if __model is None:
-        __model = joblib.load('rf_model_win.pkl')
+        __model = joblib.load('rf_model.pkl')
 
 
 def get_data_columns():
